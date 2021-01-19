@@ -8,6 +8,6 @@ inventory_blueprint = Blueprint(
     url_prefix='/inventory/'
 )
 
-@inventory_blueprint.route('/inventory/')
+@inventory_blueprint.route('/')
 def account():
     return render_template('resource.html')

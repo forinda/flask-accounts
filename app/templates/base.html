@@ -1,17 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% block title %}
-        
-    {% endblock title %}
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% block title %} {% endblock title %}
+  </head>
+  <body>
     <div class="main-container">
-        {% block content %}
-            
-        {% endblock content %}
+      <div class="sidebar">
+          <nav>
+              <ul>
+                  <li><a href="{{url_for('home.index')}}">Home</a></li>
+                  <li><a href="{{url_for('accounts.register_student')}}">Admit Student</a></li>
+                  <li><a href="{{url_for('accounts.register_teacher')}}">Employ teacher</a></li>
+                  <li><a href="{{url_for('accounts.register')}}">Regiter</a></li>
+                  <li><a href="{{url_for('accounts.login')}}">Login</a></li>
+                  <li><a href="{{url_for('accounts.profile')}}">Profile</a></li>
+                  <li><a href="{{url_for('accounts.admin')}}">Admin</a></li>
+                  <li><a href="{{url_for('accounts.update_profile')}}">Update profile</a></li>
+              </ul>
+          </nav>
+      </div>
+      <div class="main">
+        <main>{% block content %} {% endblock content %}</main>
+      </div>
     </div>
-</body>
+  </body>
 </html>
