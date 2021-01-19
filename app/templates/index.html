@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {% if title %}
+        <title>{{title}}</title>
+    {% else %}
+        <title>Home</title>
+    {% endif %}
+{% endblock title %}
+
+{% block content %}
+    <h1>Homepage</h1>
+{% endblock content %}
