@@ -26,12 +26,25 @@
     border-right: 1px solid #333333;
     background-color: #083746;
     border-radius: 10px;
+    position: fixed;
+    left: 10px;
+    bottom: 5vh;
 }
 .main{
-    flex: 2;
-    background-color: #043c61;
+    flex: 1;
+    /* width: 600px; */
+
+    background-color: #505152;
     border-radius: 8px;
     display: grid;
     place-items: center;
     padding: 10px;
+    /* position: absolute; */
+    right: 10px;
+    overflow-y: scroll;
+}
+.main-container{
+    position: relative;
+    overflow-y: scroll;
+    display: grid;
 }

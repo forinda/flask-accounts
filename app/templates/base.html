@@ -3,29 +3,37 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{{url_for('static', filename='css/navbar.css')}}">
     <link rel="stylesheet" href="{{url_for('static', filename='css/sidebar.css')}}">
     <link rel="stylesheet" href="{{url_for('static', filename='css/dashboard.css')}}">
     <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/forms.css')}}">
     {% block title %} {% endblock title %}
   </head>
   <body>
+    {% include 'include/_message.html' %}
     <div class="main-container">
       <div class="sidebar">
           <nav>
               <ul>
                   <li><a href="{{url_for('home.index')}}">Home</a></li>
-                  <li><a href="{{url_for('accounts.register_student')}}">Admit Student</a></li>
-                  <li><a href="{{url_for('accounts.register_teacher')}}">Employ teacher</a></li>
-                  <li><a href="{{url_for('accounts.register')}}">Regiter</a></li>
-                  <li><a href="{{url_for('accounts.login')}}">Login</a></li>
-                  <li><a href="{{url_for('accounts.profile')}}">Profile</a></li>
-                  <li><a href="{{url_for('accounts.admin')}}">Admin</a></li>
-                  <li><a href="{{url_for('accounts.update_profile')}}">Update profile</a></li>
+                  <li><a href="{{url_for('auth.register_student')}}">Admit Student</a></li>
+                  <li><a href="{{url_for('auth.register_teacher')}}">Employ teacher</a></li>
+                  <li><a href="{{url_for('auth.register')}}">Regiter</a></li>
+                  <li><a href="{{url_for('auth.login')}}">Login</a></li>
+                  <li><a href="{{url_for('auth.profile')}}">Profile</a></li>
+                  <li><a href="{{url_for('auth.admin')}}">Admin</a></li>
+                  <li><a href="{{url_for('auth.update_profile')}}">Update profile</a></li>
               </ul>
           </nav>
       </div>
       <div class="main">
+        <header>
+          <div class="row">
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+          </div>
+        </header>
         <main>{% block content %} {% endblock content %}</main>
       </div>
     </div>

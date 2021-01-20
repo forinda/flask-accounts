@@ -1,10 +1,42 @@
 {% extends 'base.html' %}
 
 {% if title %}
-    <title>{{title}}</title>
+<title>{{title}}</title>
 {% else %}
-    <title>Accounts</title>
+<title>Accounts</title>
 {% endif %}
 {% block content %}
-    <h1>User login</h1>
+<h1>User Login</h1>
+<div class="form-container">
+
+    <form action="" method="post">
+
+        {{form.hidden_tag()}}
+        <p>
+            {{form.username.label}}
+            {{form.username}}
+        <p>
+            {% for error in form.username.errors %}
+            <span>{{error}}</span>
+            {% endfor %}
+        </p>
+        </p>
+        <p>
+            {{form.password.label}}
+            {{form.password}}
+        <p>
+            {% for error in form.password.errors %}
+            <span>{{error}}</span><br>
+            {% endfor %}
+        </p>
+        </p>
+        <p>
+            {{form.submit()}}
+        </p>
+        <hr>
+        <small>Don't have an account? <a href="{{url_for('auth.register')}}">Register</a></small>
+    </form>
+
+
+</div>
 {% endblock content %}
